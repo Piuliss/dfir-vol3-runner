@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+
+# Docker
+*.log
+.docker/
+
+# Vol3 caches (accidentally mounted into a build context)
+cache/
+out/
+
+# OS / Editor cruft
+.DS_Store
+.vscode/
+.idea/
+
+# Synthetic test artifacts
+*.raw
+*.dmp
+*.evtx
+*.zip
