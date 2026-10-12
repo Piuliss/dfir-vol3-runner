@@ -2,6 +2,8 @@
 
 **A Docker runner for [Volatility 3](https://github.com/volatilityfoundation/volatility3) that emulates `linux/amd64` so it works on macOS arm64 (Apple Silicon).**
 
+[![Docker Hub](https://img.shields.io/docker/pulls/honeyjack/dfir-vol3-runner.svg)](https://hub.docker.com/r/honeyjack/dfir-vol3-runner)
+
 Built while responding to a ransomware incident (Inc Ransom variant BAA on a Windows Server 2016 DC, GRUPOALCON.LOCAL) where the native macOS arm64 Vol3 plugins returned empty rows for `pslist`, `pstree`, `netscan`, etc., but Docker Desktop's LinuxKit (amd64 emulation) recovered `windows.psscan` (25 processes) and `windows.netscan` (27 connections).
 
 ## Why does this exist?
@@ -16,11 +18,14 @@ This image bundles Vol3 2.28.2 + Capstone + two helper scripts that replicate th
 docker pull honeyjack/dfir-vol3-runner:1.0.0
 ```
 
+- Hub: https://hub.docker.com/r/honeyjack/dfir-vol3-runner
 - Tag: `honeyjack/dfir-vol3-runner`
 - Versions: `1.0.0`, `latest`
 - Base image: `python:3.11-slim` (built `--platform=linux/amd64`)
-- Size: ~280 MB compressed
+- Size: ~54 MB compressed
 - OS compat: native linux/amd64; on macOS arm64 uses Docker Desktop's LinuxKit (works)
+- Published: 2026-10-11 by @Piuliss
+- Digest (`latest` / `1.0.0`): `sha256:96bfeee25097bf06d1fc467552ded3f0a8a55b338475a48ab5aa0dd83e703870`
 
 ## Quick start
 
