@@ -43,5 +43,5 @@ COPY README.runner.md /work/README.md
 RUN chmod +x /work/*.sh
 
 # Default: print banner + help
-ENTRYPOINT ["python", "-m", "volatility3", "-v"]
+ENTRYPOINT ["vol"]
 CMD ["--help"]
